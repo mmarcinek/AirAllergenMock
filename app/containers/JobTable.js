@@ -18,7 +18,7 @@ const {
 
 import { Form,
   Separator, InputField, LinkField,
-  SwitchField, PickerField, DatePickerField, TimePickerField
+  SwitchField, PickerField, DatePickerField
 } from 'react-native-form-generator';
 
 class JobTable extends Component {
