@@ -27,9 +27,8 @@ class JobTable extends Component {
 
     this.jobDetails = Array.from(realm.objects('JobTable'))
     console.log(this.jobDetails)
-    this.jobHeader = Object.keys(this.jobDetails[0]);
 
-    if (this.jobDetails.length < 1) {
+    if (this.jobDetails.length < 1 || this.jobDetails == null || this.jobDetails == {}) {
       realm.write(() => {
         realm.create('JobTable', {
           table_id: this.props.navigation.state.params.job_id,
@@ -45,6 +44,9 @@ class JobTable extends Component {
         })
       })
     }
+
+    this.jobHeader = Object.keys(this.jobDetails[0]);
+    
 
     this.jobDetailsList = this.jobDetails.map((detail) =>{
       return (
